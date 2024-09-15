@@ -3,7 +3,6 @@
 
 #import "AppDelegate.h"
 #import "ShieldController.h"
-#import "DockKiller.h"
 
 @interface AppDelegate ()
 @end
@@ -25,8 +24,6 @@
                                                object: nil];
 
     [self _updateScreens];
-    
-    [DockKiller sharedInstance];
 }
 
 

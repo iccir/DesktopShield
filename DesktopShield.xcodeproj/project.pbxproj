@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		550C63AB1FDE4D8A007841BC /* ShieldController.m in Sources */ = {isa = PBXBuildFile; fileRef = 550C63AA1FDE4D8A007841BC /* ShieldController.m */; };
-		550FD7F125EB06AA0049809B /* DockKiller.m in Sources */ = {isa = PBXBuildFile; fileRef = 550FD7F025EB06AA0049809B /* DockKiller.m */; };
 		55416FF71FDE0E9500D7529A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 55416FF51FDE0E9500D7529A /* MainMenu.xib */; };
 		554170051FDE0EE000D7529A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 554170021FDE0EE000D7529A /* main.m */; };
 		554170061FDE0EE000D7529A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 554170041FDE0EE000D7529A /* AppDelegate.m */; };
@@ -43,8 +42,6 @@
 		550C63A71FDE36C0007841BC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.bplist; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
 		550C63A91FDE4D8A007841BC /* ShieldController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ShieldController.h; path = Source/ShieldController.h; sourceTree = "<group>"; };
 		550C63AA1FDE4D8A007841BC /* ShieldController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ShieldController.m; path = Source/ShieldController.m; sourceTree = "<group>"; };
-		550FD7EF25EB06AA0049809B /* DockKiller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DockKiller.h; path = Source/DockKiller.h; sourceTree = "<group>"; };
-		550FD7F025EB06AA0049809B /* DockKiller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DockKiller.m; path = Source/DockKiller.m; sourceTree = "<group>"; };
 		55416FED1FDE0E9500D7529A /* DesktopShield.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesktopShield.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55416FF61FDE0E9500D7529A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		554170021FDE0EE000D7529A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/main.m; sourceTree = SOURCE_ROOT; };
@@ -100,8 +97,6 @@
 			children = (
 				550C63A91FDE4D8A007841BC /* ShieldController.h */,
 				550C63AA1FDE4D8A007841BC /* ShieldController.m */,
-				550FD7EF25EB06AA0049809B /* DockKiller.h */,
-				550FD7F025EB06AA0049809B /* DockKiller.m */,
 				554170031FDE0EE000D7529A /* AppDelegate.h */,
 				554170041FDE0EE000D7529A /* AppDelegate.m */,
 				5569A42E25E5EC520003650E /* FileMover.h */,
@@ -208,7 +203,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				554170061FDE0EE000D7529A /* AppDelegate.m in Sources */,
-				550FD7F125EB06AA0049809B /* DockKiller.m in Sources */,
 				550C63AB1FDE4D8A007841BC /* ShieldController.m in Sources */,
 				5574420E25E34C5900EDEE98 /* Utils.m in Sources */,
 				554170051FDE0EE000D7529A /* main.m in Sources */,
