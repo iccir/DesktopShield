@@ -79,6 +79,8 @@
 
 - (void) _handleFileURL:(NSURL *)fileURL destination:(NSURL *)destination shouldCopy:(BOOL)shouldCopy
 {
+    NSFileManager *fileManager = _fileManager;
+
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         NSString *filename = [fileURL lastPathComponent];
 
@@ -92,7 +94,7 @@
         pathToTry = [pathToTry stringByAppendingPathExtension:extension];
         
         NSInteger i = 2;
-        while ([_fileManager fileExistsAtPath:pathToTry] && (i < 1000)) {
+        while ([fileManager fileExistsAtPath:pathToTry] && (i < 1000)) {
             basenameToTry = [basename stringByAppendingFormat:@" %ld", i++];
             
             pathToTry = [destination path];
@@ -103,9 +105,9 @@
         NSURL *destination = [NSURL fileURLWithPath:pathToTry];
     
         if (shouldCopy) {
-            [_fileManager copyItemAtURL:fileURL toURL:destination error:nil];
+            [fileManager copyItemAtURL:fileURL toURL:destination error:nil];
         } else {
-            [_fileManager moveItemAtURL:fileURL toURL:destination error:nil];
+            [fileManager moveItemAtURL:fileURL toURL:destination error:nil];
         }
     }];
 }
