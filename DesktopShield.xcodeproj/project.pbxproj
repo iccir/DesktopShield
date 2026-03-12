@@ -125,12 +125,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55416FFE1FDE0E9500D7529A /* Build configuration list for PBXNativeTarget "DesktopShield" */;
 			buildPhases = (
+				559382492F625ED000AADA8A /* rcbump */,
 				55416FE91FDE0E9500D7529A /* Sources */,
 				55416FEA1FDE0E9500D7529A /* Frameworks */,
 				55416FEB1FDE0E9500D7529A /* Resources */,
 				55406C6E20B4E915001BA95B /* CopyFiles */,
 				550C63951FDE3558007841BC /* Copy LoginItems */,
-				5557E833262BB679005A697D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -188,23 +188,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5557E833262BB679005A697D /* ShellScript */ = {
+		559382492F625ED000AADA8A /* rcbump */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
 			);
 			inputPaths = (
 			);
+			name = rcbump;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -R $BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app /Applications\ncodesign -f -s - /Applications/$PRODUCT_NAME.app\n";
+			shellScript = "which rcbump\n\nif [ $? -eq 0 ]; then\n    rcbump build\n    exit $?\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
