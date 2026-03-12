@@ -81,12 +81,13 @@
 {
     NSFileManager *fileManager = _fileManager;
 
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        NSString *filename = [fileURL lastPathComponent];
+    NSString *filename  = [fileURL lastPathComponent];
+    NSString *basename  = [filename stringByDeletingPathExtension];
+    NSString *extension = [filename pathExtension];
 
-        NSString *basename  = [filename stringByDeletingPathExtension];
-        NSString *extension = [filename pathExtension];
-        
+    if (!filename || !basename || !extension) return;
+
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         NSString *basenameToTry = basename;
         
         NSString *pathToTry = [destination path];
@@ -188,13 +189,14 @@
             [promiseReceiver receivePromisedFilesAtDestination: [self _temporaryURL]
                                                        options: @{ }
                                                 operationQueue: [self _workQueue]
-                                                        reader:^(NSURL *fileURL, NSError *errorOrNil)
+                                                        reader:^(NSURL *fileURL, NSError *error)
             {
-                [self _handleFileURL:fileURL destination:destination shouldCopy:shouldCopy];
-
+                if (!error && [fileURL isFileURL]) {
+                    [self _handleFileURL:fileURL destination:destination shouldCopy:shouldCopy];
+                }
             }];
         
-        } else if ([item isKindOfClass:[NSURL class]]) {
+        } else if ([item isKindOfClass:[NSURL class]] && [item isFileURL]) {
             [self _handleFileURL:(NSURL *)item destination:destination shouldCopy:shouldCopy];
         }
     }];
