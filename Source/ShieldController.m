@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2024 Ricci Adams
+// Copyright (c) 2021-2026 Ricci Adams
 // MIT License (or) 1-clause BSD License
 
 #import "ShieldController.h"
@@ -50,27 +50,6 @@
     if (!_screen) return;
 
     NSWindow *window = [self window];
-
-#if DARKEN_MENU_BAR
-    NSRect frame = [_screen frame];
-    
-    NSImage *image = [NSImage imageWithSize:frame.size flipped:YES drawingHandler:^(NSRect dstRect) {
-        NSShadow *shadow = [[NSShadow alloc] init];
-        
-        [shadow setShadowBlurRadius:8.0];
-        [shadow setShadowColor:[NSColor blackColor]];
-        
-        [shadow set];
-        
-        [[NSColor colorWithWhite:0.2 alpha:1.0] set];
-        [[NSBezierPath bezierPathWithRect:CGRectMake(-32.0, 0, frame.size.width + 64.0, 24.0)] fill];
-
-        return YES;
-    }];
-    
-    [_imageView setImage:image];
-    [_imageView setImageScaling:NSImageScaleNone];
-#endif        
 
     [window setFrame:[_screen frame] display:NO];
     
